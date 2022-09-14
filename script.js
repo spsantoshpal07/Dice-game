@@ -59,31 +59,31 @@ const holdBtn = document.querySelector(".btn--hold");
 holdBtn.addEventListener('click', function() {
     if(activePlayer0) {
         finalScorePlayer0 += currentScorePlayer0;
-        if(finalScorePlayer0 >= 100) {
-            alert("Player 1 wins 🏆🏆!!");
-            newGame();
-        }
         scoreEl[0].textContent = finalScorePlayer0;
         
         sectionEl[0].classList.remove("player--active");
         sectionEl[1].classList.add("player--active");
         currentScorePlayer0 = 0;
         currentScoreEl[0].textContent = currentScorePlayer0;
+        if(finalScorePlayer0 >= 100) {
+            alert("Player 1 wins 🏆🏆!!");
+            newGame();
+        }
         
         activePlayer0 = false;
         activePlayer1 = true;
     } else {
         finalScorePlayer1 += currentScorePlayer1;
-        if(finalScorePlayer1 >= 100) {
-            alert("Player 2 wins 🏆🏆!!");
-            newGame();
-        }
         scoreEl[1].textContent = finalScorePlayer1;
         
         sectionEl[1].classList.remove("player--active");
         sectionEl[0].classList.add("player--active");
         currentScorePlayer1 = 0;
         currentScoreEl[1].textContent = currentScorePlayer1;
+        if(finalScorePlayer1 >= 100) {
+            alert("Player 2 wins 🏆🏆!!");
+            newGame();
+        }
         
         activePlayer1 = false;
         activePlayer0 = true;
